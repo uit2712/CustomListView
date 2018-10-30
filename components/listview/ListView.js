@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import {
-    StyleSheet,
     ScrollView
 } from 'react-native';
-import ListHeroes from './data/MockListHeroes';
+import Hero from './models/Hero';
 import ListViewItem from './ListViewItem';
 
 export default class ListView extends Component<Props> {
@@ -12,29 +11,23 @@ export default class ListView extends Component<Props> {
 
         this.state = {
             heroes: this.props.heroes
-        }
+        };
     }
 
-    showListView() {
+    showListHeroes() {
         let result;
-        result = this.state.heroes.map((hero: Hero, key: any) => {
-            return <ListViewItem hero={hero} key={key}/>
-        });
+        result = this.state.heroes.map((hero: Hero, key: any) =>
+            <ListViewItem hero={hero} key={key}/>
+        );
 
         return result;
     }
 
     render() {
         return (
-            <ScrollView style={styles.listViewContainer}>
-                {this.showListView()}
+            <ScrollView>
+                {this.showListHeroes()}
             </ScrollView>
         )
     }
 }
-
-const styles = StyleSheet.create({
-    listViewContainer: {
-        flex: 1
-    }
-});
