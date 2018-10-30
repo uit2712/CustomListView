@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import {
     StyleSheet,
-    View,
+    TouchableOpacity,
     Image,
-    Text,
-    TouchableOpacity
+    View,
+    Text
 } from 'react-native';
 
 export default class ListViewItem extends Component<Props> {
@@ -12,22 +12,20 @@ export default class ListViewItem extends Component<Props> {
         super(props);
 
         this.state = {
-            hero: this.props.hero // we receive data from props, which is sent from component ListView
+            hero: this.props.hero // we pass hero through props
         };
     }
 
     render() {
-        if(this.state.hero != null)
-            return (
-                <TouchableOpacity style={styles.listViewItemContainer}>
-                    <Image source={this.state.hero.avatar} style={styles.avatar}/>
-                    <View style={styles.info}>
-                        <Text style={styles.name}>{this.state.hero.name}</Text>
-                        <Text style={[styles.superpower, styles.text]}>{this.state.hero.superpower}</Text>
-                    </View>
-                </TouchableOpacity>
-            )
-        else return null;
+        return (
+            <TouchableOpacity style={styles.listViewItemContainer}>
+                <Image source={this.state.hero.avatar} style={styles.avatar}/>
+                <View style={styles.info}>
+                    <Text style={styles.heroName}>{this.state.hero.name}</Text>
+                    <Text style={styles.text}>{this.state.hero.superpower}</Text>
+                </View>
+            </TouchableOpacity>
+        )
     }
 }
 
@@ -37,20 +35,19 @@ const styles = StyleSheet.create({
         margin: 20
     },
     info: {
-        marginLeft: 20,
-        alignItems: 'center',
-        justifyContent: 'center'
+        justifyContent: 'center',
+        marginLeft: 20
     },
     avatar: {
         width: 150,
         height: 150,
-        borderRadius: 75
+        borderRadius: 75,
     },
     text: {
-        fontSize: 15
+        fontSize: 20
     },
-    name: {
-        fontSize: 20,
+    heroName: {
+        fontSize: 25,
         fontWeight: 'bold'
     }
 });
