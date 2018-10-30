@@ -1,7 +1,7 @@
 export default class Hero {
     name: string;
     superpower: string;
-    avatar: any; // -> require(imageUrl)
+    avatar: any; // require(url) or {uri: url}
 
     constructor(
         name: string,
