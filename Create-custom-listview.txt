@@ -1,5 +1,5 @@
 --------------------CREATE CUSTOM LIST VIEW--------------------
-- STEP 1: Determine how your list view look like? Every list view item contains what?
+- STEP 1: Determine how your listview look like? Every listview item contains what?
 => Create a model contains data
 => Create a component: listview item
 - STEP 2: Create component listview
