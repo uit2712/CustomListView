@@ -1,6 +1,6 @@
 #CustomListView
 
---------------------CREATE CUSTOM LIST VIEW--------------------
+--------------------CREATE CUSTOM LISTVIEW IN REACT NATIVE--------------------
 - STEP 1: Determine how your listview look like? Every listview item contains what?
 => Create a model contains data
 => Create a component: listview item
